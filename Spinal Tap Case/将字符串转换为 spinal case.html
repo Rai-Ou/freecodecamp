@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function spinalCase(str) {
+            // "It's such a fine line between stupid, and clever."
+            // --David St. Hubbins
+            str = str.replace(/_/g, " ")
+                .replace(/([A-Z])/g, " $1")
+                .replace(/^\s/, "")
+                .replace(/\s+/g, "-")
+                .toLowerCase();
+
+            console.log(str)
+            return str;
+        }
+
+        spinalCase("thisIsSpinalTap")
+
+    </script>
+</body>
+
+</html>

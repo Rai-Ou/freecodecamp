@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            transition: all 1s
+        }
+
+        a {
+            text-decoration: none;
+            color: #FFF;
+        }
+
+        .box {
+            background: #FFF;
+            width: 40%;
+            margin: 10% auto 0 auto;
+        }
+
+        .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden
+        }
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .box {
+            padding: 20px
+        }
+
+        #twitter,
+        #btn {
+            height: 30px;
+            cursor: pointer;
+            line-height: 30px;
+            text-align: center;
+            padding: 0 10px;
+            -moz-user-select: none;
+            /*火狐*/
+            -webkit-user-select: none;
+            /*webkit浏览器*/
+            -ms-user-select: none;
+            /*IE10*/
+            -khtml-user-select: none;
+            /*早期浏览器*/
+            user-select: none;
+        }
+
+        #txt{font-size: 26px}
+        #name{text-align: right ;margin-right:20px }
+        #btn {
+            color: #FFF;
+
+
+        }
+        .box-bottom{
+            margin-top: 10px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box">
+            <p id="txt"></p>
+            <p id="name"></p>
+            <div class="box-bottom clearfix">
+                <a class="left" id="twitter" href="#">twitter</a>
+
+                <div class="right" id="btn">New Quote</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+
+            var wrap = document.getElementsByClassName("wrap")[0];
+            start()
+
+            document.getElementById("btn").onclick = function () {
+                start();
+
+
+            }
+
+
+
+
+
+
+        }
+        var data = [{
+              "txt":  "aaaaaaaaaaa aaaaaaaaaaaaaaaa aaaaaaaaa aa aaaaaaaa aaaaa aaaaaaa aaaaaaa aaaaaaa","name": "111"
+            },
+            { 
+               "txt": "BBBBBB BBBBBBBB BBBBBB BBBB BBBBBBBB  BBBBBBBB BBBBBBBBBB BBBBBBBB BBBBBBBB","name": "222"
+            },
+            {
+                "txt":  "ccccccc ccccccccc ccccccc ccccccccc cccc cccc cccc ccccc cccccc cc c ccccc  cccc","name": "333"
+            },
+            {
+                "txt":   "dddd ddd ddddd dd dd ddd ddd ddd dddd dd dddd ddddddddd dddddd ddddddddd  ddd dddd ddddddddd","name": "444"
+            }
+        ]
+
+
+
+        function start() {
+            //生产随机背景及字体颜色
+            var color = "";
+            var r = Math.floor(Math.random() * 200);
+            var g = Math.floor(Math.random() * 200);
+            var b = Math.floor(Math.random() * 200);
+            color = "rgb(" + r + "," + g + "," + b + ")"
+            document.body.style.background = color;
+            document.body.style.color = color;
+            document.getElementById("twitter").style.background = color;
+            document.getElementById("btn").style.background = color;
+            //随机内容
+            var length = data.length;
+            var num = Math.floor(Math.random() * length);
+            document.getElementById("txt").innerHTML=data[num].txt
+            document.getElementById("name").innerHTML="-"+data[num].name
+            
+            console.log(num)
+        }
+    </script>
+</body>
+
+</html>

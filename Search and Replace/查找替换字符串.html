@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function myReplace(str, before, after) {
+            if (IsUpper(before[0]) != IsUpper(after[0])) {
+                var a = after[0].toUpperCase();
+                var b = after.slice(1);
+                after = a + b;
+            }
+            var str = str.replace(new RegExp(before, 'g'), after)
+            console.log(str)
+            return str;
+            function IsUpper(code) {
+                return code === code.toUpperCase()
+            }
+        }
+
+
+        myReplace("He is Sleeping on the couch", "Sleeping", "sitting")
+
+    </script>
+</body>
+
+</html>

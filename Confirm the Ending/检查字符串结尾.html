@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function confirmEnding(str, target) {
+            // 请把你的代码写在这里
+            var tmp;
+            var length=str.length-target.length;
+            if (str.substr(length) == target) {
+                tmp = true;
+            } else {
+                tmp = false;
+            }
+            var str = tmp;
+            console.log(str)
+            return str;
+        }
+
+        confirmEnding("Bastian", "tian");
+    </script>
+</body>
+
+</html>

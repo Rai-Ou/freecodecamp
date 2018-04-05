@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fearNotLetter(str) {
+            var newArr = [];
+            var begin = str.charCodeAt(0);
+            var end = str.charCodeAt(str.length - 1);
+
+            for (var i = begin; i <= end; i++) {
+                var flag = false;
+
+                for (var j = 0; j < str.length; j++) {
+                    if (str.charCodeAt(j) == i) {
+                        flag = true;
+                        break;
+                    }
+                }
+                if (!flag) {
+                    newArr.push(i)
+                }
+            }
+            console.log(newArr.length)
+            if (newArr.length == 0) {
+                var str =undefined;
+            } else { var str = String.fromCharCode(newArr) }
+
+            
+            console.log(str)
+            return str;
+        }
+
+        fearNotLetter("abc");
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function translate(str) {
+            var arr = ["a", "e", "i", "o", "u"]
+            var newStr = str.toLowerCase();
+            for (var i = 0; i < newStr.length; i++) {
+                for (var j = 0; j < arr.length; j++) {
+                    if (i == 0) {
+                        if (newStr[i] == arr[j]) {
+                            var tmp = str + "way";
+                            str = tmp;
+                            console.log(str);
+                            return str;
+                        }
+                    } else if (newStr[i] == arr[j]) {
+                        console.log(i);
+                        var a = str.slice(0, i);
+                        var b = str.slice(i);
+                        console.log(a);
+                        console.log(b);
+                        var tmp = b + a + "ay";
+                        str = tmp;
+                        console.log(str);
+                        return str;
+                    }
+                }
+            }
+        }
+
+        translate("consonant");
+    </script>
+</body>
+
+</html>

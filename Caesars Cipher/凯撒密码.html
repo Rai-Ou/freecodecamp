@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function rot13(str) { // LBH QVQ VG!
+            // 请把你的代码写在这里
+          
+            var newArr=[];
+            for (var i = 0; i < str.length; i++) {
+                // console.log(str.charCodeAt(i))
+                var tmp = str.charCodeAt(i);
+                if (tmp >= 65 && tmp <= 90) {
+                    if(tmp<=77){
+                        newArr.push(String.fromCharCode(tmp + 13));
+                    }else{
+                        newArr.push(String.fromCharCode(tmp - 13));
+                    }
+                    
+                } else {
+                    newArr.push(String.fromCharCode(tmp));
+                };
+            }
+            str=newArr.join("")
+
+            return str;
+        }
+
+        rot13("SERR PBQR PNZC"); // 你可以修改这一行来测试你的代码
+    </script>
+</body>
+
+</html>

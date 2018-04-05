@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul id="info">
+
+        </ul>
+    </div>
+    <script>
+        $(function () {
+            var api = "http://v.juhe.cn/weather/ip?format=1";
+            var APPKey = "&key=JH442ba87f880a4737b72ef0cf4fe5327d&ip=";
+            var ip = returnCitySN.cip;
+            var url = api + APPKey + ip;
+            console.log(url)
+            // $.ajax({
+            //     url: url,
+            //     success: function (message) {
+            //         console.log(message)
+            //         alert(message)
+            //     }
+            // })
+            axios.get("http://en.wikipedia.org/wiki/Special:Random")
+            .then(function(message){
+                console.log(message)
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>

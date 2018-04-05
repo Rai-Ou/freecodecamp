@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function unite(arr1, arr2, arr3) {
+            var newArr=[];
+            for(var i=0;i<arguments.length;i++){
+                newArr.push(arguments[i])
+            }
+            newArr=newArr.reduce(function(a,b){
+                return a.concat(b)
+            })
+            var tmp=[newArr[0]];
+            for(var j=0;j<newArr.length;j++){
+                if(tmp.indexOf(newArr[j])<0){
+                    tmp.push(newArr[j])
+                }
+            }
+            arr1=tmp;
+
+            return arr1;
+        }
+
+        unite([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
+    </script>
+</body>
+
+</html>

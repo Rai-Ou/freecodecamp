@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Build a Personal Portfolio Webpage</title>
+    <style>
+        /* 通用样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        .clearfix:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+        
+        .wrap {
+            width: 80%;
+            margin: auto
+        }
+        /* 浮动导航条 */
+        nav {
+            width: 100%;
+            height: 80px;
+            background: #592059;
+            position: fixed;
+            top: 0;
+
+        }
+
+
+        .navlist {
+            display: flex;
+        }
+
+        #logo {
+            height: 50px;
+            margin: 15px
+        }
+
+        .navlist a {
+            color: #555;
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 15px
+        }
+
+        .navlist a:hover {
+            color: #ccc;
+        }
+
+        #navlist-on {
+            background: #FFF;
+            color: #555;
+        }
+        /* 头部 */
+        .header{
+            margin-top:80px;
+            background: #555
+        }
+        .header-left{
+            width: 60%;
+            padding-top: 15px;
+            padding-left: 20px;
+        }
+        .header-left p{
+            text-align: right;
+            font-size: 20px;
+            color: #eee;
+        }
+        .header-right{
+            width:40%
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航条 -->
+    <nav class="clearfix">
+        <div class="wrap">
+            <a href="#">
+                <img class="left" id="logo" src="http://qlip.in/images/qlip.png" alt="">
+            </a>
+            <ul class="navlist right">
+                <li>
+                    <a id="navlist-on" href="about">ABOUT</a>
+                </li>
+                <li>
+                    <a href="about">PORTFOLIO</a>
+                </li>
+                <li>
+                    <a href="about">CONTACT</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <!-- 导航条结束 -->
+    <div class="wrap">
+        <!-- 头部 -->
+        <div class="header clearfix">
+            <div class="header-left left">
+                <p>Front-End Developer and UX/UI designer, with practical experience in project management, branding strategy, and creative direction; devoted to functional programming and information architecture.</p>
+                <hr>
+                <p>Web Developer - User Experience Designer - Graphic Artist</p>
+            </div>
+            <div class="header-right left">
+                <img src="http://qlip.in/images/avatar.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="portfolio"></div>
+        <div class="contact"></div>
+    </div>
+    <footer></footer>
+</body>
+
+</html>

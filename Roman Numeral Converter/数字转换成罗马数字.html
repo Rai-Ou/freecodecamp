@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function convert(num) {
+            var str = num.toString();
+            var a = parseInt(num / 1000);
+            var b = parseInt((num - a * 1000) / 100);
+            var c = parseInt((num - a * 1000 - b * 100) / 10)
+            var d = parseInt((num - a * 1000 - b * 100 - c * 10))
+            if (num > 4999) {
+                console.log("请输入1-4999")
+            } else {
+                num = toRoman(a, "M") + toRoman(b, "C", "D", "M") + toRoman(c, "X", "L", "C") + toRoman(d, "I", "V", "X")
+                console.log(num)
+                return num;
+            }
+            function toRoman(val, roman1, roman2, roman3) {
+                if (roman2 == undefined) {
+                    roman2 = ""
+                }
+                var tmp = "";
+                if (val != 0) {
+                    if (val < 4) {
+                        for (var i = 0; i < val; i++) {
+                            tmp += roman1
+                        }
+                        return tmp;
+                    } else if (val == 4) {
+                        tmp = roman1 + roman2;
+                        return tmp;
+                    } else if (val == 5) {
+                        tmp = roman2;
+                        return tmp;
+                    } else if (val < 9) {
+                        tmp = roman2;
+                        for (var i = 0; i < val - 5; i++) {
+                            tmp += roman1
+                        }
+                        return tmp
+                    } else if (val == 9) {
+                        tmp = roman1 + roman3;
+                        return tmp
+                    }
+                } else {
+                    return tmp
+                }
+            }
+
+        }
+
+        convert(9);
+    </script>
+</body>
+
+</html>

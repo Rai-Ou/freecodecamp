@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function findLongestWord(str) {
+            // 请把你的代码写在这里
+            var arr = str.split(" ");
+            var max = "0"
+            for (var i = 1; i < arr.length; i++) {
+                if (arr[i].length > arr[max].length) {
+                    max = i
+                }
+            }
+            str = arr[max]
+            return str.length;
+        }
+
+        findLongestWord("The quick brown fox jumped over the lazy dog");
+    </script>
+</body>
+
+</html>
