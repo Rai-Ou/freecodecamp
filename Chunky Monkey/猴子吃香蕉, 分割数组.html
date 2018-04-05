@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function chunk(arr, size) {
+            // 请把你的代码写在这里
+            var tmp = [];
+            var len = arr.length;
+            var num;
+            var a = 0;
+            var b = 0;
+            if (len % size != 0) {
+                num = parseInt(len / size) + 1;
+            } else {
+                num = parseInt(len / size);
+            }
+            console.log(num)
+            for (var i = 0; i < num; i++) {
+                b += size;
+                tmp.push(arr.slice(a, b));
+                a += size;
+            }
+            arr = tmp;
+            return arr;
+        }
+
+        chunk([0, 1, 2, 3, 4, 5], 2)
+    </script>
+</body>
+
+</html>
