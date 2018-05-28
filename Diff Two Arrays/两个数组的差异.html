@@ -12,9 +12,7 @@
     <span id="demo"></span>
     <script>
         function diff(arr1, arr2) {
-            var newArr = [];
             var newArr = arr1.concat(arr2).sort()
-
             function remove() {
                 for (var i = 0; i < newArr.length - 1; i++) {
                     if (newArr[i] == newArr[i + 1]) {
